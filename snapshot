@@ -1,0 +1,30 @@
+
+Auto Snap shot program by shell scripting
+
+Before Starting the program firstly we need a software ‘Streamer’. To download this type the command sudo apt-get install streamer or go throw the link “http://www.sourceforge.net/projects/mjpg-streamer/files/&#8221; and download the deb file and install it
+
+To store the Snapshot image ,make an directoryby following command in terminal
+
+mkdir snap
+
+*/snap is name of directory ,you can choose nay name*/
+
+Now open the gedit text editor
+
+now type the –
+
+#!/bin/bash
+
+*/shell to now what kind of  interpreter to run */
+
+cd snap
+
+*/ to move the  to the folder where to  store the image*/
+
+dte=”$(date +”%A-%B-%y-%T”)”
+
+*/dte is the variable name which is used to store the value of the date function of the terminal (%A is for the day,%B is for the month,%y is for the year and %T is for the time). We are using date function to provide the date and of the photo click.If we don’t do this it will replace the previous file as,the name of both will be same so it replace  it*/
+
+echo “$(streamer  jpeg -o $dte.jpeg)”
+
+*/ echo is use for the print in shell scripting .Now we use the streamer command to make the snap shot ,jpeg is format of the image ,-o is for the creating output file, then we call the variable in which we call the date function with the extension of the format in which we want to store the image i.e .jpeg or .jpg*/
